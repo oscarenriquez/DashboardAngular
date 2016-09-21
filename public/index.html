@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DashboardSL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dashboard SL">
+    <meta name="author" content="Oscar Enriquez">
+    <title>Document</title>
+    <script data-require="lodash.js@3.5.0" data-semver="3.5.0" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body layout="row" ng-controller="mainCtrl" ng-cloak>
+
+    <ng-insert src="tpl.sidenav" layout="vertical"></ng-insert>
+    <div layout="column">
+        <header ng-insert src="tpl.header"></header>
+        <md-content ng-insert src="tpl.content" flex layout-padding></md-content>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+
+    <script src="script/app.js"></script>
+
+    <script src="script/services/templateService.js"></script>
+    <script src="script/services/menuService.js"></script>
+
+    <script src="script/controllers/mainCtrl.js"></script>
+
+    <script src="script/directives/tools/ngInsert.js"></script>
+    <script src="script/directives/menuLink.js"></script>
+    <script src="script/directives/menuToggle.js"></script>
+</body>
+
+</html>
