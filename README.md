@@ -1,6 +1,6 @@
 ## Dashboard Angular
 
-Web application to load and customize Web Reports
+DashBoard Application, Front-End Development with AngularJs and Angular Material
 
 ## Contributors
 
