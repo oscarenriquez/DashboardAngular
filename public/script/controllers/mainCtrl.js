@@ -1,4 +1,4 @@
-DashboardSL.controller('mainCtrl', function($scope, templateService, $mdSidenav, menu) {    
+DashboardSL.controller('mainCtrl', function($scope, $mdSidenav, $mdToast, $mdDialog, $mdMedia, $mdBottomSheet, templateService, menu) {
     $scope.searchText = "";
     $scope.tpl = templateService;
     $scope.name = "Oscar";
@@ -7,6 +7,8 @@ DashboardSL.controller('mainCtrl', function($scope, templateService, $mdSidenav,
         $mdSidenav('left').toggle();
     };
 
+
+    $scope.addReport = addReport;
 
     var aboutMeArr = ['Family', 'Location', 'Lifestyle'];
     var budgetArr = ['Housing', 'LivingExpenses', 'Healthcare', 'Travel'];
@@ -17,7 +19,7 @@ DashboardSL.controller('mainCtrl', function($scope, templateService, $mdSidenav,
     $scope.toggleOpen = toggleOpen;
     $scope.autoFocusContent = false;
     $scope.menu = menu;
-    
+
     $scope.status = {
         isFirstOpen: true,
         isFirstDisabled: false
@@ -30,4 +32,21 @@ DashboardSL.controller('mainCtrl', function($scope, templateService, $mdSidenav,
     function toggleOpen(section) {
         menu.toggleSelectSection(section);
     };
+
+    function addReport($event) {
+        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
+        $mdDialog.show({
+            templateUrl: './view/dialog/newReportDialog.html',
+            parent: angular.element(document.body),
+            targetEvent: $event,
+            controller: 'addReportCtrl',
+            controllerAs: 'ctrl',
+            clickOutsideToClose: true,
+            fullscreen: useFullScreen
+        }).then(function(report) {
+            console.log('You submited the dialog');
+        }, function() {
+            console.log('You cancelled the dialog.');
+        });
+    }
 });
