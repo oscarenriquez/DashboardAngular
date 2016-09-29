@@ -1,6 +1,6 @@
 var DashboardSL;
 (function(angular, DashboardSL) {
-    angular.module('DashboardSL', ['ngAnimate', 'ngMaterial'])
+    angular.module('DashboardSL', ['ngAnimate', 'ngMaterial', 'lfNgMdFileInput'])
         .config(function($mdThemingProvider) {
 
         })

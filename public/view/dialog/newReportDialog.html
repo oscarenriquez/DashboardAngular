@@ -14,10 +14,9 @@
                         <label>Descripcion</label>
                         <textarea ng-model="report.description" required></textarea>
                     </md-input-container>
-                    <md-input-container flex>
-                        <label>Archivo</label>
-                        <input type="file" ng-model="report.file" required>
-                    </md-input-container>
+                </div>
+                <div layout="row" flex>
+                    <lf-ng-md-file-input lf-files='files' flex> </lf-ng-md-file-input>
                 </div>
             </div>
         </md-dialog-content>
