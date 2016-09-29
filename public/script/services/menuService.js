@@ -20,6 +20,7 @@
                 sections.push({
                     name: 'Beers',
                     type: 'toggle',
+                    open: false,
                     pages: [{
                         name: 'IPAs',
                         type: 'link',
@@ -41,6 +42,7 @@
                 sections.push({
                     name: 'Munchies',
                     type: 'toggle',
+                    open: false,
                     pages: [{
                         name: 'Cheetos',
                         type: 'link',
@@ -65,10 +67,10 @@
                     sections: sections,
 
                     toggleSelectSection: function(section) {
-                        self.openedSection = (self.openedSection === section ? null : section);
+                        section.open = !section.open
                     },
                     isSectionSelected: function(section) {
-                        return self.openedSection === section;
+                        return section.open;
                     },
 
                     selectPage: function(section, page) {

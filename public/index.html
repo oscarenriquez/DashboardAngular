@@ -15,8 +15,8 @@
 
 <body layout="row" ng-controller="MainCtrl" ng-cloak>
 
-    <ng-insert src="tpl.sidenav" layout="vertical"></ng-insert>
-    <div layout="column">
+    <ng-include src="tpl.sidenav" layout="row"></ng-include>
+    <div layout="column" flex>
         <header ng-insert src="tpl.header"></header>
         <md-content ng-insert src="tpl.content" flex layout-padding></md-content>
     </div>

@@ -1,8 +1,29 @@
-<md-dialog aria-label="label">
-    <md-dialog-content>
-        {{holaMundo}}
-    </md-dialog-content>
-    <md-dialog-actions>
-        <md-button ng-click="closeDialog()" class="dialog-class" aria-label="label">Cerrar</md-button>
-    </md-dialog-actions>
+<md-dialog aria-label="label" flex-gt-sm="90" ng-class="{'fullscreen-dialog':screenSize}">
+    <form id="reportForm" name="reportForm" ng-submit="save()" layout="column" layout-fill>
+        <md-dialog-content flex="80">
+            <div layout="column" layout-padding>
+                <h2>{{holaMundo}}</h2>
+                <h3>{{report.name}}</h3>
+                <h3>Times changed: {{changes}}</h3>
+                <div layout="row" flex>
+                    <md-input-container flex>
+                        <label>Reporte</label>
+                        <input type="text" ng-model="report.name" required>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Descripcion</label>
+                        <textarea ng-model="report.description" required></textarea>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Archivo</label>
+                        <input type="file" ng-model="report.file" required>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions flex="20" layout="row">
+            <md-button ng-click="closeDialog()" class="dialog-class" aria-label="label">Cerrar</md-button>
+            <md-button type="submit" class="md-primary md-raised" ng-disabled="reportForm.$invalid">Guardar</md-button>
+        </md-dialog-actions>
+    </form>
 </md-dialog>
